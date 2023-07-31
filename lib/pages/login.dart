@@ -1,7 +1,16 @@
+import 'package:beginner/pages/routes.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
+  bool changeButton = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +26,7 @@ class LoginPage extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'Welcome',
+            'Welcome $name!',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -38,6 +47,10 @@ class LoginPage extends StatelessWidget {
                     hintText: 'Enter username',
                     labelText: 'Username',
                   ),
+                  onChanged: (value) {
+                    name = value;
+                    setState(() {});
+                  },
                 ),
                 TextFormField(
                   obscureText: true,
@@ -49,13 +62,48 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 20.0,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    print('Login button is clicked!');
+                InkWell(
+                  onTap: () async {
+                    setState(() {
+                      changeButton = true;
+                    });
+                    await Future.delayed(Duration(seconds: 1));
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
-                  child: Text('Log in'),
-                  style: TextButton.styleFrom(),
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    height: 50,
+                    width: changeButton ? 50 : 150,
+                    alignment: Alignment.center,
+                    child: changeButton
+                        ? Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : Text(
+                            'Log in',
+                            style: TextStyle(
+                              color: Colors.white,
+                              // fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      // shape:
+                      //     changeButton ? BoxShape.circle : BoxShape.rectangle,
+                      borderRadius:
+                          BorderRadius.circular(changeButton ? 50.0 : 8.0),
+                    ),
+                  ),
                 ),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     print('Login button is clicked!');
+                //   },
+                //   child: Text('Log in'),
+                //   style: TextButton.styleFrom(),
+                // ),
               ],
             ),
           ),
