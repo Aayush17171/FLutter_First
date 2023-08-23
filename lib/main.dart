@@ -1,5 +1,5 @@
 import 'package:beginner/pages/login.dart';
-import 'package:beginner/pages/day1.dart';
+import 'package:beginner/pages/home.dart';
 import 'package:beginner/pages/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,10 +22,10 @@ class myApp extends StatelessWidget {
       darkTheme: ThemeData(
           // brightness: Brightness.dark,
           primarySwatch: Colors.green),
-      // initialRoute: '/home',
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         '/': (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => Day1Page(),
+        MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );

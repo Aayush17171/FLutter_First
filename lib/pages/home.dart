@@ -1,7 +1,8 @@
+import 'package:beginner/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-class Day1Page extends StatelessWidget {
-  const Day1Page({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,8 +11,7 @@ class Day1Page extends StatelessWidget {
         title: Text('Day One'),
       ),
       body: Center(),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
-
