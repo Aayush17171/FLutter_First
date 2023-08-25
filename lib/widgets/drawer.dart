@@ -1,3 +1,4 @@
+import 'package:beginner/pages/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
@@ -40,6 +42,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
@@ -53,12 +56,29 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 CupertinoIcons.settings_solid,
                 color: Colors.white,
               ),
               title: Text(
                 'Settings',
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
+              leading: Icon(
+                CupertinoIcons.square_arrow_left,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Log out',
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
