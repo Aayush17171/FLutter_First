@@ -2,7 +2,7 @@
     "products" : [
         {
             "id": 1,
-            "name": "iPhone 12 pro",
+            "name": "iPhone 12 Pro",
             "desc": "Apple 12th generaion phone.",
             "price": 999,
             "color": "#33505a",
