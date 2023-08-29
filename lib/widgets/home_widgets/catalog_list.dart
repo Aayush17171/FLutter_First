@@ -1,9 +1,9 @@
 import 'package:beginner/modues/catalog.dart';
-import 'package:beginner/pages/home.dart';
+
 import 'package:beginner/pages/home_detail.dart';
 import 'package:beginner/widgets/home_widgets/catalog_image.dart';
 import 'package:beginner/widgets/theme.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -73,7 +73,7 @@ class CatalogItem extends StatelessWidget {
                         MyTheme.DarkBluishColor,
                       ),
                       shape: MaterialStateProperty.all(StadiumBorder())),
-                  child: "Buy".text.make(),
+                  child: "Add to cart".text.make(),
                 )
               ],
             ).pOnly(right: 8)
