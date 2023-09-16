@@ -2,6 +2,12 @@ import 'catalog.dart';
 import 'package:beginner/modues/catalog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   // Catalog field
   late CatalogModel _catalog;
 
@@ -29,7 +35,7 @@ class CartModel {
   }
 
   // Remove item
-  void Remove(Item item){
+  void Remove(Item item) {
     _itemIds.remove(item.id);
-  },
+  }
 }
